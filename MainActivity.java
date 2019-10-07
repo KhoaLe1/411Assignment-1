@@ -12,16 +12,20 @@ import android.view.ViewGroup;
 import android.graphics.Typeface;
 import android.widget.LinearLayout;
 
-
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         HorizontalScrollView sv = new HorizontalScrollView(this);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+       // ScrollView sv = new ScrollView(this);
+
 
         LinearLayout Wrap = new LinearLayout(this);
         Wrap.setOrientation(LinearLayout.VERTICAL);
+
         LinearLayout.LayoutParams D = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
@@ -48,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
         //---------------------------
         GridLayout g1 = new GridLayout(this);
-        g1.setRowCount(11);
+        g1.setRowCount(4);
         g1.setColumnCount(3);
         TextView tv = new TextView(this);
         tv.setText(" name");
-        tv.setTypeface(null, Typeface.BOLD);
         GridLayout.Spec row1 = GridLayout.spec(0);
         GridLayout.Spec col2 = GridLayout.spec(1);
+        GridLayout.Spec row4 = GridLayout.spec(3);
         GridLayout.LayoutParams first = new GridLayout.LayoutParams(row1,col2);
         tv.setTextSize(12);
         tv.setTextColor(Color.BLACK);
@@ -66,8 +70,7 @@ public class MainActivity extends AppCompatActivity {
         g1.addView(tv);
         //----------------
         TextView tvP = new TextView(this);
-        tvP.setText("Properties");
-        tvP.setTypeface(null,Typeface.BOLD);
+        tvP.setText("properties");
         GridLayout.Spec row2 = GridLayout.spec(1);
         GridLayout.Spec col1 = GridLayout.spec(0);
         GridLayout.LayoutParams sd = new GridLayout.LayoutParams(row1,col1);
@@ -82,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         //-----------------
         TextView tvD = new TextView(this);
         tvD.setText("Day Hour Classification");
-        tvD.setTypeface(null,Typeface.BOLD);
         GridLayout.Spec row3 = GridLayout.spec(2);
         GridLayout.Spec col3 = GridLayout.spec(2);
         GridLayout.LayoutParams thd = new GridLayout.LayoutParams(row1,col3);
@@ -127,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
         //---------------
         TextView tvC = new TextView(this);
         tvC.setText("Category");
-        tvC.setTypeface(null,Typeface.BOLD);
         GridLayout.LayoutParams cat = new GridLayout.LayoutParams(row2,col2);
         tvC.setTextSize(12);
         tvC.setTextColor(Color.BLACK);
@@ -140,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
         //-----------------
         TextView tvDT = new TextView(this);
         tvDT.setText("Day and Time");
-        tvDT.setTypeface(null,Typeface.BOLD);
         GridLayout.LayoutParams Dtm = new GridLayout.LayoutParams(row2,col3);
         tvDT.setTextSize(12);
         tvDT.setTextColor(Color.BLACK);
@@ -179,11 +179,8 @@ public class MainActivity extends AppCompatActivity {
         //-------------
         TextView tvNo = new TextView(this);
         tvNo.setText("");
-        tvNo.setTypeface(null,Typeface.BOLD);
-        GridLayout.Spec row5 = GridLayout.spec(4);
-        GridLayout.LayoutParams Wn = new GridLayout.LayoutParams(row5,col1);
-        tvNo.setTextSize(12);
-        tvNo.setTextColor(Color.BLACK);
+        //GridLayout.Spec row5 = GridLayout.spec(4);
+        GridLayout.LayoutParams Wn = new GridLayout.LayoutParams(row4,col1);
         tvNo.setBackgroundColor(Color.CYAN);
         tvNo.setGravity(Gravity.CENTER_HORIZONTAL);
         Wn.width = 200;
@@ -193,21 +190,20 @@ public class MainActivity extends AppCompatActivity {
         //------------
         TextView tvMm = new TextView(this);
         tvMm.setText("min <= hour && hour <= max");
-        tvMm.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams Min = new GridLayout.LayoutParams(row5,col2);
+        GridLayout.LayoutParams Min = new GridLayout.LayoutParams(row4,col2);
         tvMm.setTextSize(10);
         tvMm.setTextColor(Color.BLACK);
         tvMm.setBackgroundColor(Color.CYAN);
         tvMm.setGravity(Gravity.CENTER_HORIZONTAL);
         Min.width = 500;
+        Min.height = 55;
         Min.setMargins(1,1,1,1);
         tvMm.setLayoutParams(Min);
         g1.addView(tvMm);
         //--------------
         TextView tvSys = new TextView(this);
         tvSys.setText("System.out.printIn(greeting+,\"World!\"");
-        tvSys.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams Sy = new GridLayout.LayoutParams(row5,col3);
+        GridLayout.LayoutParams Sy = new GridLayout.LayoutParams(row4,col3);
         tvSys.setTextSize(12);
         tvSys.setTextColor(Color.BLACK);
         tvSys.setBackgroundColor(Color.CYAN);
@@ -216,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
         Sy.setMargins(5,5,5,5);
         tvSys.setLayoutParams(Sy);
         g1.addView(tvSys);
+
         //----Grid 2 for 4 columns
         GridLayout g2 = new GridLayout(this);
         g2.setRowCount(11);
@@ -227,10 +224,58 @@ public class MainActivity extends AppCompatActivity {
         GridLayout.Spec row10 = GridLayout.spec(9);
         GridLayout.Spec row11 = GridLayout.spec(10);
         //
+        TextView tvBK = new TextView(this);
+        tvBK.setText("");
+        GridLayout.LayoutParams Cb = new GridLayout.LayoutParams(row6,col1);
+        tvBK.setBackgroundColor(Color.CYAN);
+        tvBK.setGravity(Gravity.CENTER_VERTICAL);
+        Cb.width = 200;
+        Cb.setMargins(5,5,5,5);
+        tvBK.setLayoutParams(Cb);
+        g2.addView(tvBK);
+        //-------------------
+        TextView tvIm = new TextView(this);
+        tvIm.setText("int min");
+        GridLayout.LayoutParams Imn = new GridLayout.LayoutParams(row6,col2);
+        tvIm.setTextSize(12);
+        tvIm.setTextColor(Color.BLACK);
+        tvIm.setBackgroundColor(Color.CYAN);
+        tvIm.setGravity(Gravity.CENTER_HORIZONTAL);
+        Imn.width = 240;
+        Imn.setMargins(5,5,5,5);
+        tvIm.setLayoutParams(Imn);
+        g2.addView(tvIm);
+        //--------------------
+        TextView tvmX = new TextView(this);
+        tvmX.setText("int max");
+        GridLayout.LayoutParams Mx = new GridLayout.LayoutParams(row6,col3);
+        tvmX.setTextSize(12);
+        tvmX.setTextColor(Color.BLACK);
+        tvmX.setBackgroundColor(Color.CYAN);
+        tvmX.setGravity(Gravity.CENTER_HORIZONTAL);
+        Mx.width = 240;
+        Mx.setMargins(5,5,5,5);
+        tvmX.setLayoutParams(Mx);
+        g2.addView(tvmX);
+        //---------
+        TextView tvStr = new TextView(this);
+        tvStr.setText("String Greeting");
+        GridLayout.Spec col4 = GridLayout.spec(3);
+        GridLayout.LayoutParams Sgn = new GridLayout.LayoutParams(row6,col4);
+        tvStr.setTextSize(12);
+        tvStr.setTextColor(Color.BLACK);
+        tvStr.setBackgroundColor(Color.CYAN);
+        //tvGt.setBackgroundColor(Color.parseColor("#FF9800"));
+        tvStr.setGravity(Gravity.CENTER_HORIZONTAL);
+        Sgn.width = 705;
+        Sgn.setMargins(5,5,5,5);
+        tvStr.setLayoutParams(Sgn);
+        g2.addView(tvStr);
+        //--------------
         TextView tvRL = new TextView(this);
         tvRL.setText("Rule");
         tvRL.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams RU = new GridLayout.LayoutParams(row6,col1);
+        GridLayout.LayoutParams RU = new GridLayout.LayoutParams(row7,col1);
         tvRL.setTextSize(12);
         tvRL.setTextColor(Color.BLACK);
         tvRL.setBackgroundColor(Color.WHITE);
@@ -239,51 +284,10 @@ public class MainActivity extends AppCompatActivity {
         RU.setMargins(5,5,5,5);
         tvRL.setLayoutParams(RU);
         g2.addView(tvRL);
-        //-------------------
-        TextView tvFm = new TextView(this);
-        tvFm.setText("From");
-        tvFm.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams Fr = new GridLayout.LayoutParams(row6,col2);
-        tvFm.setTextSize(12);
-        tvFm.setTextColor(Color.BLACK);
-        tvFm.setBackgroundColor(Color.YELLOW);
-        tvFm.setGravity(Gravity.CENTER_VERTICAL);
-        Fr.width = 240;
-        Fr.setMargins(5,5,5,5);
-        tvFm.setLayoutParams(Fr);
-        g2.addView(tvFm);
-        //--------------------
-        TextView tvT = new TextView(this);
-        tvT.setText("To");
-        tvT.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams To = new GridLayout.LayoutParams(row6,col3);
-        tvT.setTextSize(12);
-        tvT.setTextColor(Color.BLACK);
-        tvT.setBackgroundColor(Color.YELLOW);
-        tvT.setGravity(Gravity.CENTER_VERTICAL);
-        To.width = 240;
-        To.setMargins(5,5,5,5);
-        tvT.setLayoutParams(To);
-        g2.addView(tvT);
-        //---------
-        TextView tvGt = new TextView(this);
-        tvGt.setText("Greeting");
-        tvGt.setTypeface(null,Typeface.BOLD);
-        GridLayout.Spec col4 = GridLayout.spec(3);
-        GridLayout.LayoutParams Gng = new GridLayout.LayoutParams(row6,col4);
-        tvGt.setTextSize(12);
-        tvGt.setTextColor(Color.BLACK);
-        tvGt.setBackgroundColor(Color.parseColor("#FF9800"));
-        tvGt.setGravity(Gravity.CENTER_VERTICAL);
-        Gng.width = 705;
-        Gng.setMargins(5,5,5,5);
-        tvGt.setLayoutParams(Gng);
-        g2.addView(tvGt);
-        //--------------
+        //-------
         TextView tvR10 = new TextView(this);
         tvR10.setText("R10");
-        tvR10.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams R1 = new GridLayout.LayoutParams(row7,col1);
+        GridLayout.LayoutParams R1 = new GridLayout.LayoutParams(row8,col1);
         tvR10.setTextSize(12);
         tvR10.setTextColor(Color.BLACK);
         tvR10.setBackgroundColor(Color.WHITE);
@@ -292,11 +296,10 @@ public class MainActivity extends AppCompatActivity {
         R1.setMargins(5,5,5,5);
         tvR10.setLayoutParams(R1);
         g2.addView(tvR10);
-        //-------
+        //----------
         TextView tvR20 = new TextView(this);
         tvR20.setText("R20");
-        tvR20.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams R2 = new GridLayout.LayoutParams(row8,col1);
+        GridLayout.LayoutParams R2 = new GridLayout.LayoutParams(row9,col1);
         tvR20.setTextSize(12);
         tvR20.setTextColor(Color.BLACK);
         tvR20.setBackgroundColor(Color.WHITE);
@@ -308,8 +311,7 @@ public class MainActivity extends AppCompatActivity {
         //----------
         TextView tvR30 = new TextView(this);
         tvR30.setText("R30");
-        tvR30.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams R3 = new GridLayout.LayoutParams(row9,col1);
+        GridLayout.LayoutParams R3 = new GridLayout.LayoutParams(row10,col1);
         tvR30.setTextSize(12);
         tvR30.setTextColor(Color.BLACK);
         tvR30.setBackgroundColor(Color.WHITE);
@@ -318,11 +320,10 @@ public class MainActivity extends AppCompatActivity {
         R3.setMargins(5,5,5,5);
         tvR30.setLayoutParams(R3);
         g2.addView(tvR30);
-        //----------
+        //
         TextView tvR40 = new TextView(this);
         tvR40.setText("R40");
-        tvR40.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams R4 = new GridLayout.LayoutParams(row10,col1);
+        GridLayout.LayoutParams R4 = new GridLayout.LayoutParams(row11,col1);
         tvR40.setTextSize(12);
         tvR40.setTextColor(Color.BLACK);
         tvR40.setBackgroundColor(Color.WHITE);
@@ -333,21 +334,20 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvR40);
         //--------------
         TextView tvZe = new TextView(this);
-        tvZe.setText("0");
+        tvZe.setText("From");
         tvZe.setTypeface(null,Typeface.BOLD);
         GridLayout.LayoutParams zero = new GridLayout.LayoutParams(row7,col2);
         tvZe.setTextSize(12);
         tvZe.setTextColor(Color.BLACK);
         tvZe.setBackgroundColor(Color.YELLOW);
-        tvZe.setGravity(Gravity.CENTER_VERTICAL|Gravity.RIGHT);
+        tvZe.setGravity(Gravity.CENTER_VERTICAL);
         zero.width = 240;
         zero.setMargins(5,5,5,5);
         tvZe.setLayoutParams(zero);
         g2.addView( tvZe);
         //-----------------
         TextView tvTw = new TextView(this);
-        tvTw.setText("12");
-        tvTw.setTypeface(null,Typeface.BOLD);
+        tvTw.setText("0");
         GridLayout.LayoutParams Twelve = new GridLayout.LayoutParams(row8,col2);
         tvTw.setTextSize(12);
         tvTw.setTextColor(Color.BLACK);
@@ -359,8 +359,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView( tvTw );
         //------------------
         TextView tvEt = new TextView(this);
-        tvEt.setText("18");
-        tvEt.setTypeface(null,Typeface.BOLD);
+        tvEt.setText("12");
         GridLayout.LayoutParams Eit = new GridLayout.LayoutParams(row9,col2);
         tvEt.setTextSize(12);
         tvEt.setTextColor(Color.BLACK);
@@ -372,8 +371,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvEt);
         //--------------
         TextView tvTT = new TextView(this);
-        tvTT.setText("22");
-        tvTT.setTypeface(null,Typeface.BOLD);
+        tvTT.setText("18");
         GridLayout.LayoutParams TwT = new GridLayout.LayoutParams(row10,col2);
         tvTT.setTextSize(12);
         tvTT.setTextColor(Color.BLACK);
@@ -384,22 +382,33 @@ public class MainActivity extends AppCompatActivity {
         tvTT.setLayoutParams(TwT);
         g2.addView(tvTT);
         //--------------
+        TextView tvTwD = new TextView(this);
+        tvTwD.setText("22");
+        GridLayout.LayoutParams TD = new GridLayout.LayoutParams(row11,col2);
+        tvTwD.setTextSize(12);
+        tvTwD.setTextColor(Color.BLACK);
+        tvTwD.setBackgroundColor(Color.YELLOW);
+        tvTwD.setGravity(Gravity.CENTER_VERTICAL|Gravity.RIGHT);
+        TD.width = 240;
+        TD.setMargins(5,5,5,5);
+        tvTwD.setLayoutParams(TD);
+        g2.addView(tvTwD);
+        //-------
         TextView tvOO = new TextView(this);
-        tvOO.setText("11");
+        tvOO.setText("To");
         tvOO.setTypeface(null,Typeface.BOLD);
         GridLayout.LayoutParams El = new GridLayout.LayoutParams(row7,col3);
         tvOO.setTextSize(12);
         tvOO.setTextColor(Color.BLACK);
         tvOO.setBackgroundColor(Color.YELLOW);
-        tvOO.setGravity(Gravity.CENTER_VERTICAL|Gravity.RIGHT);
+        tvOO.setGravity(Gravity.CENTER_VERTICAL);
         El.width = 240;
         El.setMargins(5,5,5,5);
         tvOO .setLayoutParams(El);
         g2.addView(tvOO);
         //-----------------
         TextView tvST = new TextView(this);
-        tvST.setText("17");
-        tvST.setTypeface(null,Typeface.BOLD);
+        tvST.setText("11");
         GridLayout.LayoutParams Stn = new GridLayout.LayoutParams(row8,col3);
         tvST.setTextSize(12);
         tvST.setTextColor(Color.BLACK);
@@ -411,8 +420,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView( tvST );
         //------------------
         TextView tvSvg = new TextView(this);
-        tvSvg.setText("21");
-        tvSvg.setTypeface(null,Typeface.BOLD);
+        tvSvg.setText("17");
         GridLayout.LayoutParams twn = new GridLayout.LayoutParams(row9,col3);
         tvSvg.setTextSize(12);
         tvSvg.setTextColor(Color.BLACK);
@@ -424,20 +432,31 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvSvg);
         //--------------
         TextView Tee = new TextView(this);
-        Tee.setText("23");
-        Tee.setTypeface(null,Typeface.BOLD);
-        GridLayout.LayoutParams Three = new GridLayout.LayoutParams(row10,col3);
+        Tee.setText("21");
+        GridLayout.LayoutParams juan = new GridLayout.LayoutParams(row10,col3);
         Tee.setTextSize(12);
         Tee.setTextColor(Color.BLACK);
         Tee.setBackgroundColor(Color.YELLOW);
         Tee.setGravity(Gravity.CENTER_VERTICAL|Gravity.RIGHT);
-        Three.width = 240;
-        Three.setMargins(5,5,5,5);
-        Tee.setLayoutParams(Three);
+        juan.width = 240;
+        juan.setMargins(5,5,5,5);
+        Tee.setLayoutParams(juan);
         g2.addView(Tee);
         //-------------------------
+        TextView TeT = new TextView(this);
+        TeT.setText("23");
+        GridLayout.LayoutParams Three = new GridLayout.LayoutParams(row11,col3);
+        TeT.setTextSize(12);
+        TeT.setTextColor(Color.BLACK);
+        TeT.setBackgroundColor(Color.YELLOW);
+        TeT.setGravity(Gravity.CENTER_VERTICAL|Gravity.RIGHT);
+        Three.width = 240;
+        Three.setMargins(5,5,5,5);
+        TeT.setLayoutParams(Three);
+        g2.addView(TeT);
+        //----------------------
         TextView tvGM = new TextView(this);
-        tvGM.setText("Good Morning");
+        tvGM.setText("Greeting");
         tvGM.setTypeface(null,Typeface.BOLD);
         GridLayout.LayoutParams GoM = new GridLayout.LayoutParams(row7,col4);
         tvGM.setTextSize(12);
@@ -450,8 +469,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvGM);
         //-------------
         TextView tvGA = new TextView(this);
-        tvGA.setText("Good Afternoon");
-        tvGA.setTypeface(null,Typeface.BOLD);
+        tvGA.setText("Good Morning");
         GridLayout.LayoutParams GoA = new GridLayout.LayoutParams(row8,col4);
         tvGA.setTextSize(12);
         tvGA.setTextColor(Color.BLACK);
@@ -463,8 +481,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvGA);
         //-------------
         TextView tvGE = new TextView(this);
-        tvGE.setText("Good Evening");
-        tvGE.setTypeface(null,Typeface.BOLD);
+        tvGE.setText("Good Afternoon");
         GridLayout.LayoutParams GoE = new GridLayout.LayoutParams(row9,col4);
         tvGE.setTextSize(12);
         tvGE.setTextColor(Color.BLACK);
@@ -476,8 +493,7 @@ public class MainActivity extends AppCompatActivity {
         g2.addView(tvGE);
         //-------------
         TextView tvGN = new TextView(this);
-        tvGN.setText("Good Night");
-        tvGN.setTypeface(null,Typeface.BOLD);
+        tvGN.setText("Good Evening");
         GridLayout.LayoutParams GoN = new GridLayout.LayoutParams(row10,col4);
         tvGN.setTextSize(12);
         tvGN.setTextColor(Color.BLACK);
@@ -487,13 +503,27 @@ public class MainActivity extends AppCompatActivity {
         GoN.setMargins(5,5,5,5);
         tvGN.setLayoutParams( GoN);
         g2.addView(tvGN);
+        //---------------
+        TextView tvGNe = new TextView(this);
+        tvGNe.setText("Good Night");
+        GridLayout.LayoutParams GN = new GridLayout.LayoutParams(row11,col4);
+        tvGNe.setTextSize(12);
+        tvGNe.setTextColor(Color.BLACK);
+        tvGNe.setBackgroundColor(Color.parseColor("#FF9800"));
+        tvGNe.setGravity(Gravity.CENTER_VERTICAL);
+        GN.width = 705;
+        GN.setMargins(5,5,5,5);
+        tvGNe.setLayoutParams( GN);
+        g2.addView(tvGNe);
+
+
         //-------------
         Wrap.addView(g1);
         Wrap.addView(g2);
 
         sv.addView(Wrap);
 
-        //setContentView(sv);
-        setContentView(R.layout.activity_main);
+        setContentView(sv);
+       // setContentView(R.layout.activity_main);
     }
 }
