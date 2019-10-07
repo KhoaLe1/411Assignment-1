@@ -257,7 +257,7 @@
             android:orientation="horizontal"
             >
             <TextView
-                android:layout_width="14dp"
+                android:layout_width="18dp"
                 android:layout_height="wrap_content"
                 android:text="5"
                 android:textColor="#000000"
@@ -343,7 +343,7 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:rowCount="5"
+            android:rowCount="6"
             android:columnCount="1"
             android:background="@drawable/gray"
             android:orientation="horizontal"
@@ -354,37 +354,37 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="0"
-                android:background="#D5D3C5"
+                android:background="@drawable/gray"
                 android:text="6"
                 android:textColor="#000000" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
+                android:layout_row="2"
                 android:layout_column="0"
-                android:background="#D5D3C5"
+                android:background="@drawable/gray"
                 android:text="7"
                 android:textColor="#000000" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
+                android:layout_row="3"
                 android:layout_column="0"
-                android:background="#D5D3C5"
+                android:background="@drawable/gray"
                 android:text="8"
                 android:textColor="#000000" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
+                android:layout_row="4"
                 android:layout_column="0"
-                android:background="#D5D3C5"
+                android:background="@drawable/gray"
                 android:text="9"
                 android:textColor="#000000" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
+                android:layout_row="5"
                 android:layout_column="0"
                 android:background="@drawable/gray"
                 android:text="10"
@@ -392,13 +392,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
+                android:layout_row="6"
                 android:layout_column="0"
                 android:background="@drawable/gray"
                 android:text="11"
                 android:textColor="#000000" />
         </GridLayout>
-        <!--- Not sure why the number line stopped working -->
 
 
     <GridLayout
@@ -420,7 +419,7 @@
             >
 
             <TextView
-                android:layout_width="81dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
