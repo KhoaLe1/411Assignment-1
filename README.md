@@ -1,3 +1,2 @@
 # 411Assignment-1
-MainActivity runs both xml and java api
-Switch between content view
+MainActivity runs both xml and java api, switching content views
